@@ -133,8 +133,13 @@ function easterOnSuccess(acceleration) {
 
 	haciendoGesto = $('#gesto').attr('data-gesto');
 
-	//Comienza el gesto
+	//Comienza el gesto, diestros
 	if(ejeY <= 3 && haciendoGesto != 'si' && ejeX <= -6) {
+		$('#gesto').attr('data-gesto', 'si');
+	}
+
+	//Comienza el gesto, zurdos
+	if(ejeX >= 7 && haciendoGesto != 'si' && ejeY <= 6) {
 		$('#gesto').attr('data-gesto', 'si');
 	}
 
