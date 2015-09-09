@@ -32,7 +32,7 @@ $(window).resize(function() {
 //"Escuchamos" por el gesto
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-	doGesture();
+	watchGesture();
 	navigator.splashscreen.hide();
 
 	window.analytics.startTrackerWithId('UA-67361381-1');
@@ -106,7 +106,7 @@ function getPhoneGapPath() {
 /**
  * Escucha por el gesto del easter
  */
-function doGesture() {
+function watchGesture() {
 	var easterOptions = { frequency: 500 };
 	var easter = navigator.accelerometer.watchAcceleration(easterOnSuccess, easterOnError, easterOptions);
 }
@@ -128,17 +128,25 @@ function easterOnSuccess(acceleration) {
 
 	//Termina el gesto, ejecutar
 	if(ejeY >= 8 && haciendoGesto == 'si') {
-		window.analytics.trackEvent('Action', 'Easter');
-
-		$("body").toasty('pop');
-		window.plugins.toast.showShortBottom('¡Salud!');
-		$('#gesto').attr('data-gesto', 'no');
-		playAudio('sound/unmanjar.mp3');
+		doToasty();
 	}
 }
 
 function easterOnError() {
 	//error?
+}
+
+/**
+ * do the toasty!
+ */
+function doToasty() {
+		window.analytics.trackEvent('Action', 'Easter');
+		window.plugins.toast.showShortBottom('¡Salud!');
+
+		$("body").toasty('pop');
+		$('#gesto').attr('data-gesto', 'no');
+
+		playAudio('sound/unmanjar.mp3');
 }
 
 /**
