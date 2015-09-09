@@ -32,6 +32,8 @@ $(window).resize(function() {
 //"Escuchamos" por el gesto
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
+	$('#state').attr('data-state', 'running');
+
 	watchGesture();
 	navigator.splashscreen.hide();
 
@@ -43,9 +45,19 @@ function onDeviceReady() {
 document.addEventListener("pause", onPause, false);
 document.addEventListener("resume", onResume, false);
 function onPause() {
+	$('#state').attr('data-state', 'paused');
 	$('#sonido').attr('data-sonido', 'si');
+
+	if (navigator && navigator.app) {
+		navigator.app.exitApp();
+	} else {
+		if (navigator && navigator.device) {
+			navigator.device.exitApp();
+		}
+	}
 }
 function onResume() {
+	$('#state').attr('data-state', 'running');
 	$('#sonido').attr('data-sonido', 'no');
 }
 
@@ -140,13 +152,17 @@ function easterOnError() {
  * do the toasty!
  */
 function doToasty() {
-		window.analytics.trackEvent('Action', 'Easter');
-		window.plugins.toast.showShortBottom('¡Salud!');
+		appState = $('#state').attr('data-state');
 
-		$("body").toasty('pop');
-		$('#gesto').attr('data-gesto', 'no');
+		if(appState == 'running') {
+			window.analytics.trackEvent('Action', 'Easter');
+			window.plugins.toast.showShortBottom('¡Salud!');
 
-		playAudio('sound/unmanjar.mp3');
+			$("body").toasty('pop');
+			$('#gesto').attr('data-gesto', 'no');
+
+			playAudio('sound/unmanjar.mp3');
+		}
 }
 
 /**
