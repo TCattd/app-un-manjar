@@ -19,6 +19,7 @@ $(document).ready(function() {
 	//Link: um_thebutton
 	tappable('.um_thebutton', function(){
 		playAudio('sound/unmanjar.mp3');
+		window.analytics.trackEvent('Action', 'Button Tap');
 		return false;
 	});
 });
@@ -33,6 +34,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	doGesture();
 	navigator.splashscreen.hide();
+
+	window.analytics.startTrackerWithId('UA-67361381-1');
+	window.analytics.trackView('App Home');
 }
 
 //Evitamos sonido al salir del app
@@ -124,6 +128,8 @@ function easterOnSuccess(acceleration) {
 
 	//Termina el gesto, ejecutar
 	if(ejeY >= 8 && haciendoGesto == 'si') {
+		window.analytics.trackEvent('Action', 'Easter');
+
 		$("body").toasty('pop');
 		window.plugins.toast.showShortBottom('¡Salud!');
 		$('#gesto').attr('data-gesto', 'no');
