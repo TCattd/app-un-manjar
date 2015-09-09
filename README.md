@@ -1,5 +1,5 @@
 # Un Manjar
-===========
+
 **Drink** and taste you phone.
 
 A REALLY simple app, with a bunch of love for Chile.
