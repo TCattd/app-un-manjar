@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		id        = "cl.attitude.unmanjar"
+		versionCode="1"
+		version   = "1.0.0">
+	<name>Un Manjar</name>
+	<description>
+		Ahhh un manjar!
+	</description>
+	<author href="https://www.attitude.cl" email="esteban@attitude.cl">
+		Esteban Cuevas
+	</author>
+
+	<!--<preference name="phonegap-version" value="3.7.0" />-->
+	<preference name="permissions" value="none" />
+	<preference name="orientation" value="portrait" />
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="false" />
+	<preference name="show-splash-screen-spinner" value="false" />
+	<preference name="auto-hide-splash-screen" value="true" />
+
+	<!-- ios -->
+	<preference name="webviewbounce" value="false" />
+	<preference name="prerendered-icon" value="false" />
+	<preference name="stay-in-webview" value="false" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="exit-on-suspend" value="true" />
+
+	<!-- android -->
+	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-installLocation" value="auto" />
+	<preference name="KeepRunning" value="true" />
+
+	<!-- ios icons -->
+	<icon src="icon.png" />
+	<icon src="icons/ios/icon.png" gap:platform="ios" width="57" height="57" />
+	<icon src="icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="icons/ios/icon_at_2x.png" gap:platform="ios" width="114" height="114" />
+
+	<!-- android icons -->
+	<icon src="icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+
+	<!-- ios splash -->
+	<gap:splash src="splash.png" />
+	<gap:splash src="splash/ios/Default.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="splash/ios/Default_at_2x.png" gap:platform="ios" width="640" height="960" />
+
+	<!-- android splash -->
+	<gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+
+	<gap:plugin name="org.apache.cordova.core.Device"/>
+	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.device-motion" />
+	<gap:plugin name="org.apache.cordova.media" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="nl.x-services.plugins.toast" />
+
+	<gap:platform name="android" />
+</widget>

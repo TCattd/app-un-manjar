@@ -1,0 +1,88 @@
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html  {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.um_topbar {
+	padding-left: 22px;
+}
+
+.um_acercade {
+
+}
+
+.um_thebutton {
+	height: 200px;
+	min-width: 200px;
+}
+
+.um_thebutton > i {
+	font-size: 13rem !important;
+	margin-left: -50px;
+}
+
+.um_thebutton > img {
+	margin-left: -10px;
+}
+
+.easter {
+	text-align: right;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.toasty {
+	width: 25%;
+	right: -110px;
+	position: relative;
+}
+
+.show-dan{
+	-webkit-animation:showToastyGuy 1s;
+	   -moz-animation:showToastyGuy 1s;
+	     -o-animation:showToastyGuy 1s;
+	        animation:showToastyGuy 1s;
+}
+
+@-webkit-keyframes showToastyGuy
+{
+	0% {right: -200px;}
+	40% {right: 0;}
+	60% {right: 0;}
+	100% {right: -200px;}
+}
+
+@-moz-keyframes showToastyGuy
+{
+	0% {right: -200px;}
+	40% {right: 0;}
+	60% {right: 0;}
+	100% {right: -200px;}
+}
+
+@-o-keyframes showToastyGuy
+{
+	0% {right: -200px;}
+	40% {right: 0;}
+	60% {right: 0;}
+	100% {right: -200px;}
+}
+
+@keyframes showToastyGuy
+{
+	0% {right: -200px;}
+	40% {right: 0;}
+	60% {right: 0;}
+	100% {right: -200px;}
+}

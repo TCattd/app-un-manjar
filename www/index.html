@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Un Manjar</title>
+
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/material.indigo-deep_purple.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/tcattd.app.css" />
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/material.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.toasty.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/tappable.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/tcattd.app.js"></script>
+</head>
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row um_topbar">
+		  <!-- Title -->
+		  <span class="mdl-layout-title">Ahhh...</span>
+		  <!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation. We hide it in small screens. -->
+			<nav class="mdl-navigation">
+				<button id="demo-menu-lower-right"
+						class="mdl-button mdl-js-button mdl-button--icon">
+					<img src="img/ic_more_vert_white_48px.svg" height="30" />
+				</button>
+
+				<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+					for="demo-menu-lower-right">
+					<li class="mdl-menu__item um_acercade">Developed with <strong>attitude</strong></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="mdl-layout__content">
+		<div class="page-content">
+
+			<button class="um_thebutton animated fadeInLeft mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+				<img src="img/hand197.svg" height="120" class="animated-button animated" />
+			</button>
+
+			<div id="gesto" data-gesto="no"></div>
+			<div id="sonido" data-sonido="no"></div>
+		</div>
+	</main>
+</div>
+
+</body>
+</html>
