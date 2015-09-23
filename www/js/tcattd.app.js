@@ -48,8 +48,6 @@ function onDeviceReady() {
 
 	window.analytics.startTrackerWithId('UA-67361381-1');
 	window.analytics.trackView('App Home');
-
-	window.plugins.toast.showShortBottom('¿Y si te <<tomas>> el fono?');
 }
 
 //Evitamos sonido al salir del app
