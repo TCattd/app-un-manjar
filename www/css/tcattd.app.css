@@ -12,6 +12,10 @@ body {
 	margin: 0;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 .um_topbar {
 	padding-left: 22px;
 }
@@ -34,21 +38,14 @@ body {
 	margin-left: -10px;
 }
 
-.easter {
-	text-align: right;
-	z-index: 1;
-	position: absolute;
-	bottom: 0;
-	right: 0;
+.show-dan {
+	-webkit-animation:showToastyGuy 1s;
+	   -moz-animation:showToastyGuy 1s;
+	     -o-animation:showToastyGuy 1s;
+	        animation:showToastyGuy 1s;
 }
 
-.toasty {
-	width: 25%;
-	right: -110px;
-	position: relative;
-}
-
-.show-dan{
+.show-two {
 	-webkit-animation:showToastyGuy 1s;
 	   -moz-animation:showToastyGuy 1s;
 	     -o-animation:showToastyGuy 1s;

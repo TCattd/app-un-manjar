@@ -4,15 +4,24 @@ $(document).ready(function() {
 
 	//Toasty!
 	$("body").toasty({
-		image: 'img/toasty.png'
+		image: 'img/toasty.png',
+		imagetwo: 'img/abusheo.png'
 	});
 
 	//Be like void my friend
 	$('a[href="#"]').attr('href', 'javascript:void(0);');
 
+	//Link: um_compartir
+	tappable('.um_compartir', function(){
+		share_url = 'http://go.attitude.cl/unmanjar';
+		share_text = '¡Un Manjar de App!';
+		window.plugins.socialsharing.share(share_text, null, null, share_url);
+		return false;
+	});
+
 	//Link: um_acercade
 	tappable('.um_acercade', function(){
-		window.open('http://www.attitude.cl', '_system');
+		window.open('http://www.actitud.xyz', '_system');
 		return false;
 	});
 
@@ -39,6 +48,8 @@ function onDeviceReady() {
 
 	window.analytics.startTrackerWithId('UA-67361381-1');
 	window.analytics.trackView('App Home');
+
+	window.plugins.toast.showShortBottom('¿Y si te <<tomas>> el fono?');
 }
 
 //Evitamos sonido al salir del app
@@ -75,6 +86,8 @@ function windowresize() {
 
 	$(".um_thebutton").css('margin-left', button_left+'px');
 	$(".um_thebutton").css('margin-top', button_top+'px');
+
+	$('.um_thebutton').removeClass('hidden').addClass('animated fadeInLeft');
 }
 
 /**
@@ -157,17 +170,25 @@ function easterOnError() {
  * do the toasty!
  */
 function doToasty() {
-		appState = $('#state').attr('data-state');
+	var randToast = randomIntFromInterval(1, 10);
 
-		if(appState == 'running') {
-			window.analytics.trackEvent('Action', 'Easter');
+	appState = $('#state').attr('data-state');
+
+	if(appState == 'running') {
+		if(randToast == 9) {
+			window.analytics.trackEvent('Action', 'Easter abusheo');
+			window.plugins.toast.showShortBottom('¡Abusheo!');
+			$("body").toasty('pap');
+			$('#gesto').attr('data-gesto', 'no');
+			playAudio('sound/abusheo.mp3');
+		} else {
+			window.analytics.trackEvent('Action', 'Easter zuniga');
 			window.plugins.toast.showShortBottom('¡Salud!');
-
 			$("body").toasty('pop');
 			$('#gesto').attr('data-gesto', 'no');
-
 			playAudio('sound/unmanjar.mp3');
 		}
+	}
 }
 
 /**
@@ -180,4 +201,11 @@ function reproduciendo() {
 		$('#sonido').attr('data-sonido', 'no');
 		$('.animated-button').removeClass('tada');
 	}, 2000);
+}
+
+/**
+ * Random http://stackoverflow.com/a/7228322/920648
+ */
+function randomIntFromInterval(min,max) {
+	return Math.floor(Math.random()*(max-min+1)+min);
 }
