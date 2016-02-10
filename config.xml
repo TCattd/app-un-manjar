@@ -62,7 +62,7 @@
 	<gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
 	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	<gap:plugin name="nl.x-services.plugins.toast" version="2.0.2" />
 	<gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" />
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
