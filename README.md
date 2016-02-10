@@ -8,9 +8,7 @@ Made for Android.
 
 Probably also works on iOS, Windows Phone and others; it's Phonegap :)
 
-If you want to have this app on your device (iOS or Windows Phone), please consider a donation (paypal): esteban (at) attitude.cl
-
-Those platform require payment to gain developer access, access that i don't have (and don't need, really). Sorry. And thanks for your understanding! ;)
+Those other platforms require payment (annual subscription on iOS case) to gain developer access. Access that i don't have and don't really need for now. Sorry. And thanks for your understanding! ;)
 
 ### Disclaimer (in spanish)
 Esta aplicación se hizo con el único proposito de entretener. No tiene ninguna intención superior. Mucho menos tiene intenciones de dañar a terceros, ni aprovecharse de alguien (por eso, no hay publicidad).
